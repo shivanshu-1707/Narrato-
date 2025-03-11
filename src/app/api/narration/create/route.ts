@@ -2,6 +2,7 @@ import { getCurrentUser } from "@/app/actions/getCurrentUser";
 import { NextRequest, NextResponse } from "next/server";
 import { streamText } from "ai";
 import { model } from "@/providers/genAi";
+
 import axios from "axios";
 
 export async function POST(req: NextRequest) {
@@ -18,10 +19,11 @@ export async function POST(req: NextRequest) {
     if (!currentUser || !currentUser.email || !currentUser.name) {
       return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
     }
+    
+    console.log(url);
     const response = await axios.get<ArrayBuffer>(url, {
       responseType: "arraybuffer",
     });
-    console.log(url);
 
     const fileBuffer = Buffer.from(response.data);
 
