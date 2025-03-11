@@ -1,0 +1,76 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 175 100% 100%;
+    --foreground: 175 5% 10%;
+    --card: 175 50% 100%;
+    --card-foreground: 175 5% 15%;
+    --popover: 175 100% 100%;
+    --popover-foreground: 175 100% 10%;
+    --primary: 175 96% 29%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 175 30% 90%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 137 30% 95%;
+    --muted-foreground: 175 5% 40%;
+    --accent: 137 30% 90%;
+    --accent-foreground: 175 5% 15%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 175 5% 100%;
+    --border: 175 30% 82%;
+    --input: 175 30% 50%;
+    --ring: 175 96% 29%;
+    --radius: 0.75rem;
+   }
+  .dark {
+    --background: 175 50% 5%;
+    --foreground: 175 5% 90%;
+    --card: 175 50% 0%;
+    --card-foreground: 175 5% 90%;
+    --popover: 175 50% 5%;
+    --popover-foreground: 175 5% 90%;
+    --primary: 175 96% 29%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 175 30% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 137 30% 15%;
+    --muted-foreground: 175 5% 60%;
+    --accent: 137 30% 15%;
+    --accent-foreground: 175 5% 90%;
+    --destructive: 0 94% 30%;
+    --destructive-foreground: 175 5% 90%;
+    --border: 175 30% 18%;
+    --input: 175 30% 18%;
+    --ring: 175 96% 29%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-space-grotesk),"sans"
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold;
+  }
+  ::selection{
+    @apply bg-primary/50 rounded-md
+    
+  }
+  ::-moz-selection{
+    @apply bg-primary/50 rounded-sm
+  }
+}
